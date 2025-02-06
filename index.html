@@ -5,200 +5,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AWS Practice Quiz</title>
     <style>
-      body {
-          font-family: Arial, sans-serif;
-          margin: 20px;
-          padding: 20px;
-          background-color: #f4f4f4;
-      }
-      .quiz-container {
-          background: white;
-          padding: 20px;
-          border-radius: 8px;
-          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-          max-width: 600px;
-          margin: 20px auto;
-          text-align: left;
-      }
-      .question {
-          font-weight: bold;
-      }
-      .options {
-          list-style: none;
-          padding: 0;
-      }
-      .options li {
-          background: #eaeaea;
-          padding: 10px;
-          margin: 5px 0;
-          cursor: pointer;
-          border-radius: 5px;
-          transition: 0.3s;
-      }
-      .options li:hover {
-          background: #d6d6d6;
-      }
-      .correct {
-          background-color: #90ee90 !important;
-      }
-      .wrong {
-          background-color: #ff726f !important;
-      }
-      .score, .wrong-count, .question-count {
-          font-size: 18px;
-          font-weight: bold;
-      }
-      .wrong-count {
-          color: red;
-      }
-      .hidden {
-          display: none;
-      }
-      .btn {
-          margin-top: 10px;
-          padding: 10px 15px;
-          background: #007bff;
-          color: white;
-          border: none;
-          cursor: pointer;
-          border-radius: 5px;
-          font-size: 16px;
-          transition: 0.3s;
-          margin-right: 10px;
-      }
-      .btn:hover {
-          background: #0056b3;
-      }
-      .btn:disabled {
-          background: #cccccc;
-          cursor: not-allowed;
-      }
-  </style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #007bff;
+        }
+        .quiz-list {
+            list-style: none;
+            padding: 0;
+        }
+        .quiz-list li {
+            background: #eaeaea;
+            padding: 15px;
+            margin: 10px 0;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: 0.3s;
+            font-size: 18px;
+        }
+        .quiz-list li:hover {
+            background: #007bff;
+            color: white;
+        }
+    </style>
 </head>
 <body>
 
-
-<!-- Quiz Section -->
-<div class="quiz-container">
-  <h2 id="aws-quiz">AWS Practice Quiz</h2>
-  <p class="question-count" id="questionCount"></p>
-  <div id="quiz"></div>
-  <button class="btn hidden" id="prevBtn" onclick="prevQuestion()">Previous Question</button>
-  <button class="btn" id="submitBtn" onclick="submitAnswer()">Submit Answer</button>
-  <button class="btn hidden" id="nextBtn" onclick="nextQuestion()">Next Question</button>
-  <p class="score" id="score">Score: 0</p>
-  <p class="wrong-count" id="wrongCount">Wrong Answers: 0</p>
+<div class="container">
+    <h1>Welcome to AWS Practice Quiz</h1>
+    <p>Select a quiz to begin:</p>
+    <ul class="quiz-list" id="quizList"></ul>
 </div>
 
 <script>
-  let currentQuestion = 0;
-  let score = 0;
-  let wrongCount = 0;
-  let selectedAnswers = {}; // Stores selected answers per question
-  let answeredQuestions = new Set(); // Tracks submitted questions
+    // Generate quiz list dynamically
+    const totalQuizzes = 12; // Update if more quizzes are added
+    const quizList = document.getElementById("quizList");
 
-  // Load the quiz script dynamically
-  const quizNumber = Math.floor(Math.random() * 12) + 1;
-  const script = document.createElement('script');
-  script.src = `practice-exam-${quizNumber}.js`;
-
-  script.onload = function () {
-      if (typeof quizData === "undefined" || quizData.length === 0) {
-          alert("Quiz data failed to load. Please refresh and try again.");
-          return;
-      }
-      document.getElementById("aws-quiz").innerText = `AWS Practice Exam ${quizNumber}`;
-      loadQuestion(); // ✅ Only call loadQuestion() after quizData is ready
-  };
-
-  document.head.appendChild(script);
-
-  function loadQuestion() {
-      if (quizData.length === 0) return; // Ensure quizData is available
-
-      let quizDiv = document.getElementById("quiz");
-      let question = quizData[currentQuestion];
-
-      document.getElementById("questionCount").innerText = `Question: ${currentQuestion + 1} / ${quizData.length}`;
-      document.getElementById("submitBtn").disabled = false;
-
-      quizDiv.innerHTML = `
-          <p class="question">${question.question}</p>
-          <ul class="options">
-              ${question.options.map((option, index) => 
-                  `<li onclick="selectAnswer(${index}, this)" id="option${index}">${option}</li>`
-              ).join("")}
-          </ul>
-      `;
-
-      document.getElementById("prevBtn").classList.toggle("hidden", currentQuestion === 0);
-      document.getElementById("nextBtn").classList.toggle("hidden", !answeredQuestions.has(currentQuestion));
-  }
-
-  function selectAnswer(index, element) {
-      if (!selectedAnswers[currentQuestion]) {
-          selectedAnswers[currentQuestion] = [];
-      }
-
-      if (selectedAnswers[currentQuestion].includes(index)) {
-          selectedAnswers[currentQuestion] = selectedAnswers[currentQuestion].filter(ans => ans !== index);
-          element.style.backgroundColor = "#eaeaea";
-      } else {
-          selectedAnswers[currentQuestion].push(index);
-          element.style.backgroundColor = "#b0c4de";
-      }
-  }
-
-  function submitAnswer() {
-      if (answeredQuestions.has(currentQuestion)) return; // Prevent multiple submissions
-
-      let correctAnswers = quizData[currentQuestion].answer;
-      if (!Array.isArray(correctAnswers)) {
-          correctAnswers = [correctAnswers];
-      }
-
-      let userAnswers = selectedAnswers[currentQuestion] || [];
-      let isCorrect = userAnswers.length === correctAnswers.length &&
-                      userAnswers.every(ans => correctAnswers.includes(ans));
-
-      document.querySelectorAll(".options li").forEach((li, index) => {
-          if (correctAnswers.includes(index)) {
-              li.classList.add("correct");
-          } else if (userAnswers.includes(index)) {
-              li.classList.add("wrong");
-          }
-          li.onclick = null;  // Disable further selections
-      });
-
-      if (isCorrect) {
-          score++;
-      } else {
-          wrongCount++;
-      }
-
-      document.getElementById("score").innerText = `Score: ${score}`;
-      document.getElementById("wrongCount").innerText = `Wrong Answers: ${wrongCount}`;
-      
-      answeredQuestions.add(currentQuestion); // Mark question as answered
-      document.getElementById("submitBtn").disabled = true;
-      document.getElementById("nextBtn").classList.remove("hidden");
-  }
-
-  function nextQuestion() {
-      if (currentQuestion < quizData.length - 1) {
-          currentQuestion++;
-          loadQuestion();
-      } else {
-          alert(`Quiz completed!\nYour final score: ${score}/${quizData.length}\nWrong Answers: ${wrongCount}`);
-      }
-  }
-
-  function prevQuestion() {
-      if (currentQuestion > 0) {
-          currentQuestion--;
-          loadQuestion();
-      }
-  }
+    for (let i = 1; i <= totalQuizzes; i++) {
+        let li = document.createElement("li");
+        li.innerText = `AWS Practice Exam ${i}`;
+        li.onclick = function() {
+            localStorage.setItem("selectedQuiz", `practice-exam-${i}.js`);
+            window.location.href = "quiz.html"; // Redirect to quiz page
+        };
+        quizList.appendChild(li);
+    }
 </script>
 
 </body>
