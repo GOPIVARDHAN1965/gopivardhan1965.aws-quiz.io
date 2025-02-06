@@ -431,6 +431,10 @@ layout: exam
 
     <details markdown=1><summary markdown='span'>Answer</summary>
       Correct Answer: C
+
+      Explanation:
+      - AWS Managed Services takes care of all of your patching and backup activities to help keep your resources current and secure. When updates or patches are released by OS vendors, AWS Managed Services applies them in a timely and consistent manner to minimize the impact on your business
+      - Critical security patches are applied immediately, while others are applied based on the patch schedule you request. Backups of Stacks are automated using Amazon Elastic Block Store (EBS) and RDS snapshots, and can be restored in the event of a failure or outage, ensuring business continuity
     </details>
 
 43. Which services can be used across hybrid AWS Cloud architectures? (Select TWO)

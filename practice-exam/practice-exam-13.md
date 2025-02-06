@@ -11,7 +11,11 @@ layout: exam
     - D. AWS Marketplace
 
     <details markdown=1><summary markdown="span">Answer</summary>
+
     Correct Answer: A
+
+    Explanation: <https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html>
+
     </details>
 
 1. Which service stores objects, provides real-time access to those objects, and offers versioning and lifecycle capabilities?
@@ -21,7 +25,11 @@ layout: exam
     - D. Amazon EBS
 
     <details markdown=1><summary markdown="span">Answer</summary>
+
     Correct Answer: C
+
+    Explanation: <https://aws.amazon.com/s3/faqs/>
+
     </details>
 
 1. What AWS team assists customers with accelerating cloud adoption through paid engagements in any of several specialty practice area ?
@@ -31,7 +39,11 @@ layout: exam
     - D. AWS Account Managers
 
     <details markdown=1><summary markdown="span">Answer</summary>
+
     Correct Answer: C
+
+    Explanation: <https://aws.amazon.com/professional-services/>
+
     </details>
 
 1. A customer would like to design and build a new workload on AWS Cloud but does not have the AWS-related software technical expertise in-house. <br/>Which of the following AWS programs can a customer take advantage of to achieve that outcome?
@@ -41,7 +53,9 @@ layout: exam
     - D. AWS Service Catalog
 
     <details markdown=1><summary markdown="span">Answer</summary>
+
     Correct Answer: C
+
     </details>
 
 1. Distributing workloads across multiple Availability Zones supports which cloud architecture design principle?
@@ -51,7 +65,9 @@ layout: exam
     - D. Implement elasticity.
 
     <details markdown=1><summary markdown="span">Answer</summary>
+
     Correct Answer: C
+
     </details>
 
 1. Which AWS services can host a Microsoft SQL Server database? (Select TWO)
@@ -63,7 +79,10 @@ layout: exam
 
     <details markdown=1><summary markdown="span">Answer</summary>
 
-    Correct Answer: A, B
+    Correct Answer: AB
+
+    Explanation: <https://aws.amazon.com/sql/>
+
     </details>
 
 1. Which of the following inspects AWS environments to find opportunities that can save money for users and also improve system performance ?
@@ -85,7 +104,11 @@ layout: exam
     - D. On-Demand Instances
 
     <details markdown=1><summary markdown="span">Answer</summary>
+
     Correct Answer: C
+
+    Explanation: <https://aws.amazon.com/ec2/pricing/>
+
     </details>
 
 1. Which AWS characteristics make AWS cost effective for a workload with dynamic user demand? (Select TWO)
@@ -96,7 +119,9 @@ layout: exam
     - E. Reliability
 
     <details markdown=1><summary markdown="span">Answer</summary>
-    Correct Answer: C, D
+
+    Correct Answer: CD
+
     </details>
 
 1. Which service enables risk auditing by continuously monitoring and logging account activity, including user actions in the AWS Management Console and AWS SDKs?
@@ -106,7 +131,11 @@ layout: exam
     - D. AWS Health
 
     <details markdown=1><summary markdown="span">Answer</summary>
+
     Correct Answer: B
+
+    Explanation: <https://aws.amazon.com/cloudtrail/>
+
     </details>
 
 1. Which of the following are characteristics of Amazon S3? (Select TWO.)
@@ -118,7 +147,7 @@ layout: exam
 
     <details markdown=1><summary markdown="span">Answer</summary>
 
-    Correct Answer: B, E
+    Correct Answer: BE
 
     </details>
 
@@ -130,8 +159,14 @@ layout: exam
     - E. Amazon CloudWatch default metrics
 
     <details markdown=1><summary markdown="span">Answer</summary>
-    Correct Answer: A, B
-   </details>
+
+    Correct Answer: AB
+
+    Explanation:
+    - <https://aws.amazon.com/cloudwatch/>
+    - You can also use CloudWatch in hybrid cloud architectures by using the CloudWatch Agent or API to monitor your on-premises resources
+
+    </details>
 
 1. What costs are included when comparing AWS Total Cost of Ownership (TCO) with on-premises TCO?
     - A. Project management
@@ -142,7 +177,10 @@ layout: exam
     <details markdown=1><summary markdown="span">Answer</summary>
 
     Correct Answer: C
-   </details>
+
+    Explanation: <https://media.amazonwebservices.com/AWS_TCO_Web_Applications.pdf>
+
+    </details>
 
 1. A company is considering using AWS for a self-hosted database that requires a nightly shutdown for maintenance and cost-saving purposes. <br/> Which service should the company use?
     - A. Amazon Redshift
@@ -165,7 +203,10 @@ layout: exam
     <details markdown=1><summary markdown="span">Answer</summary>
 
     Correct Answer: B
-   </details>
+
+    Explanation: <https://aws.amazon.com/about-aws/global-infrastructure/regions_az/#Region_Maps_and_Edge_Networks>
+
+    </details>
 
 1. Which AWS tools assist with estimating costs? (Select three.)
     - A. Detailed billing report
@@ -177,6 +218,9 @@ layout: exam
     <details markdown=1><summary markdown="span">Answer</summary>
 
     Correct Answer: BCD
+
+    Explanation: <https://aws.amazon.com/premiumsupport/knowledge-center/estimating-aws-resource-costs/>
+
     </details>
 
 1. Which of the following are advantages of AWS consolidated billing? (Select TWO.)
@@ -189,6 +233,9 @@ layout: exam
     <details markdown=1><summary markdown="span">Answer</summary>
 
     Correct Answer: AD
+
+    Explanation: <https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/consolidated-billing.html>
+
     </details>
 
 1. Which of the following Reserved Instance (RI) pricing models provides the highest average savings compared to On-Demand pricing?
@@ -200,7 +247,10 @@ layout: exam
     <details markdown=1><summary markdown="span">Answer</summary>
 
     Correct Answer: C
-   </details>
+
+    Explanation: <https://aws.amazon.com/ec2/pricing/reserved-instances/pricing/>
+
+    </details>
 
 1. Compared with costs in traditional and virtualized data centers, AWS has:
     - A. greater variable costs and greater upfront costs.
@@ -211,7 +261,10 @@ layout: exam
     <details markdown=1><summary markdown="span">Answer</summary>
 
     Correct Answer: D
- </details>
+
+    Explanation: <https://d1.awsstatic.com/whitepapers/introduction-to-aws-cloud-economics-final.pdf> (10)
+
+    </details>
 
 1. A characteristic of edge locations is that they:
     - A. host Amazon EC2 instances closer to users.
@@ -234,7 +287,10 @@ layout: exam
     <details markdown=1><summary markdown="span">Answer</summary>
 
     Correct Answer: C
-  </details>
+
+    Explanation: <https://aws.amazon.com/blogs/security/how-to-restrict-amazon-s3-bucket-access-to-a-specific-iam-role/>
+
+    </details>
 
 1. Which of the following security-related actions are available at no cost?
     - A. Calling AWS Support
@@ -243,7 +299,9 @@ layout: exam
     - D. Attending AWS classes at a local university
 
     <details markdown=1><summary markdown="span">Answer</summary>
+
     Correct Answer: C
+
     </details>
 
 1. Which of the Reserved Instance (RI) pricing models can change the attributes of the RI as long as the exchange results in the creation of RIs of equal or greater value?
@@ -253,8 +311,12 @@ layout: exam
     - D. Standard RIs
 
     <details markdown=1><summary markdown="span">Answer</summary>
+
     Correct Answer: C
-  </details>
+
+    Explanation: <https://aws.amazon.com/ec2/pricing/reserved-instances/>
+
+    </details>
 
 1. Which AWS feature will reduce the customer's total cost of ownership (TCO)?
     - A. Shared responsibility security model
@@ -263,7 +325,9 @@ layout: exam
     - D. Encryption
 
     <details markdown=1><summary markdown="span">Answer</summary>
+
     Correct Answer: C
+
     </details>
 
 1. Which of the following services will automatically scale with an expected increase in web traffic?
@@ -275,7 +339,10 @@ layout: exam
     <details markdown=1><summary markdown="span">Answer</summary>
 
     Correct Answer: B
-  </details>
+
+    Explanation: <https://aws.amazon.com/elasticloadbalancing/>
+
+    </details>
 
 1. Where are AWS compliance documents, such as an SOC 1 report, located?
     - A. Amazon Inspector
@@ -300,7 +367,9 @@ layout: exam
 
     <details markdown=1><summary markdown="span">Answer</summary>
 
-    Correct Answer: B, D
+    Correct Answer: BD
+
+    Explanation: <https://aws.amazon.com/compliance/shared-responsibility-model/>
 
     </details>
 
@@ -339,7 +408,7 @@ layout: exam
 
     <details markdown=1><summary markdown="span">Answer</summary>
 
-    Correct Answer: D, E
+    Correct Answer: DE
 
     </details>
 
@@ -352,7 +421,7 @@ layout: exam
 
     <details markdown=1><summary markdown="span">Answer</summary>
 
-    Correct Answer: B, E
+    Correct Answer: BE
 
     </details>
 

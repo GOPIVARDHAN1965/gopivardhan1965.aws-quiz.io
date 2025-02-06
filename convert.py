@@ -52,4 +52,4 @@ file_names = [f'practice-exam-{i}.md' for i in range(1,13)]
 
 
 for file in file_names:
-    convert_md_to_js(f"final-md/{file}", f"{file[:-3]}.js")
+    convert_md_to_js(f"cleaned-md/{file}", f"{file[:-3]}.js")

@@ -11,8 +11,8 @@ layout: exam
     - D. AWS Marketplace
 
     <details markdown=1><summary markdown="span">Answer</summary>
-    Correct Answer: A
-</details>
+        Correct Answer: A
+    </details>
 
 1. Which service stores objects, provides real-time access to those objects, and offers versioning and lifecycle capabilities?
     - A. Amazon Glacier
@@ -21,8 +21,8 @@ layout: exam
     - D. Amazon EBS
 
     <details markdown=1><summary markdown="span">Answer</summary>
-    Correct Answer: C
-</details>
+        Correct Answer: C
+    </details>
 
 1. What AWS team assists customers with accelerating cloud adoption through paid engagements in any of several specialty practice area ?
     - A. AWS Enterprise Support
@@ -31,8 +31,8 @@ layout: exam
     - D. AWS Account Managers
 
     <details markdown=1><summary markdown="span">Answer</summary>
-    Correct Answer: C
-</details>
+        Correct Answer: C
+    </details>
 
 1. A customer would like to design and build a new workload on AWS Cloud but does not have the AWS-related software technical expertise in-house. <br/>Which of the following AWS programs can a customer take advantage of to achieve that outcome?
     - A. AWS Partner Network Technology Partners
@@ -41,8 +41,8 @@ layout: exam
     - D. AWS Service Catalog
 
     <details markdown=1><summary markdown="span">Answer</summary>
-    Correct Answer: C
-</details>
+        Correct Answer: C
+    </details>
 
 1. Distributing workloads across multiple Availability Zones supports which cloud architecture design principle?
     - A. Implement automation.
@@ -51,8 +51,8 @@ layout: exam
     - D. Implement elasticity.
 
     <details markdown=1><summary markdown="span">Answer</summary>
-    Correct Answer: C
-</details>
+        Correct Answer: C
+    </details>
 
 1. Which AWS services can host a Microsoft SQL Server database? (Select TWO)
     - A. Amazon EC2
@@ -62,9 +62,8 @@ layout: exam
     - E. Amazon S3
 
     <details markdown=1><summary markdown="span">Answer</summary>
-
-    Correct Answer: A
-</details>
+        Correct Answer: A, B
+    </details>
 
 1. Which of the following inspects AWS environments to find opportunities that can save money for users and also improve system performance ?
     - A. AWS Cost Explorer
@@ -73,9 +72,8 @@ layout: exam
     - D. Detailed billing
 
     <details markdown=1><summary markdown="span">Answer</summary>
-
-    Correct Answer: B
-</details>
+        Correct Answer: B
+    </details>
 
 1. Which of the following Amazon EC2 pricing models allow customers to use existing server-bound software license ?
     - A. Spot Instances
@@ -84,8 +82,8 @@ layout: exam
     - D. On-Demand Instances
 
     <details markdown=1><summary markdown="span">Answer</summary>
-    Correct Answer: C
-</details>
+        Correct Answer: C
+    </details>
 
 1. Which AWS characteristics make AWS cost effective for a workload with dynamic user demand? (Select TWO)
     - A. High availability
@@ -95,8 +93,8 @@ layout: exam
     - E. Reliability
 
     <details markdown=1><summary markdown="span">Answer</summary>
-    Correct Answer: C
-</details>
+        Correct Answer: C, D
+    </details>
 
 1. Which service enables risk auditing by continuously monitoring and logging account activity, including user actions in the AWS Management Console and AWS SDKs?
     - A. Amazon CloudWatch
@@ -105,8 +103,8 @@ layout: exam
     - D. AWS Health
 
     <details markdown=1><summary markdown="span">Answer</summary>
-    Correct Answer: B
-</details>
+        Correct Answer: B
+    </details>
 
 1. Which of the following are characteristics of Amazon S3? (Select TWO.)
     - A. A global file system
@@ -116,9 +114,8 @@ layout: exam
     - E. A durable storage system
 
     <details markdown=1><summary markdown="span">Answer</summary>
-
-    Correct Answer: B
-</details>
+        Correct Answer: B, E
+    </details>
 
 1. Which services can be used across hybrid AWS Cloud architectures? (Select TWO.)
     - A. Amazon Route 53
@@ -128,8 +125,8 @@ layout: exam
     - E. Amazon CloudWatch default metrics
 
     <details markdown=1><summary markdown="span">Answer</summary>
-    Correct Answer: A
-</details>
+        Correct Answer: A, B
+    </details>
 
 1. What costs are included when comparing AWS Total Cost of Ownership (TCO) with on-premises TCO?
     - A. Project management
@@ -138,9 +135,8 @@ layout: exam
     - D. Software development
 
     <details markdown=1><summary markdown="span">Answer</summary>
-
-    Correct Answer: C
-</details>
+        Correct Answer: C
+    </details>
 
 1. A company is considering using AWS for a self-hosted database that requires a nightly shutdown for maintenance and cost-saving purposes. <br/> Which service should the company use?
     - A. Amazon Redshift
@@ -149,9 +145,8 @@ layout: exam
     - D. Amazon EC2 with Amazon Elastic Block Store (Amazon EBS)
 
     <details markdown=1><summary markdown="span">Answer</summary>
-
-    Correct Answer: D
-</details>
+        Correct Answer: D
+    </details>
 
 1. Which of the following is a correct relationship between regions, Availability Zones, and edge locations?
     - A. Data centers contain regions.
@@ -160,9 +155,8 @@ layout: exam
     - D. Edge locations contain regions.
 
     <details markdown=1><summary markdown="span">Answer</summary>
-
-    Correct Answer: B
-</details>
+        Correct Answer: B
+    </details>
 
 1. Which AWS tools assist with estimating costs? (Select three.)
     - A. Detailed billing report
@@ -172,9 +166,8 @@ layout: exam
     - E. Cost Eliminator
 
     <details markdown=1><summary markdown="span">Answer</summary>
-
-    Correct Answer: B, C, D
-</details>
+        Correct Answer: B, C, D
+    </details>
 
 1. Which of the following are advantages of AWS consolidated billing? (Select TWO.)
     - A. The ability to receive one bill for multiple accounts
@@ -184,9 +177,8 @@ layout: exam
     - E. The automatic extension of the master account's AWS support plan to all accounts
 
     <details markdown=1><summary markdown="span">Answer</summary>
-
-    Correct Answer: A, D
-</details>
+        Correct Answer: A, D
+    </details>
 
 1. Which of the following Reserved Instance (RI) pricing models provides the highest average savings compared to On-Demand pricing?
     - A. One-year, No Upfront, Standard RI pricing
@@ -195,9 +187,8 @@ layout: exam
     - D. Three-year, No Upfront, Convertible RI pricing
 
     <details markdown=1><summary markdown="span">Answer</summary>
-
-    Correct Answer: C
-</details>
+        Correct Answer: C
+    </details>
 
 1. Compared with costs in traditional and virtualized data centers, AWS has:
     - A. greater variable costs and greater upfront costs.
@@ -206,9 +197,8 @@ layout: exam
     - D. lower variable costs and lower upfront costs.
 
     <details markdown=1><summary markdown="span">Answer</summary>
-
-    Correct Answer: D
-</details>
+        Correct Answer: D
+    </details>
 
 1. A characteristic of edge locations is that they:
     - A. host Amazon EC2 instances closer to users.
@@ -217,9 +207,8 @@ layout: exam
     - D. refresh data changes daily.
 
     <details markdown=1><summary markdown="span">Answer</summary>
-
-    Correct Answer: B
-</details>
+        Correct Answer: B
+    </details>
 
 1. Which of the following can limit Amazon Storage Service (Amazon S3) bucket access to specific users?
     - A. A public and private key-pair
@@ -228,9 +217,8 @@ layout: exam
     - D. Security Groups
 
     <details markdown=1><summary markdown="span">Answer</summary>
-
-    Correct Answer: C
-</details>
+        Correct Answer: C
+    </details>
 
 1. Which of the following security-related actions are available at no cost?
     - A. Calling AWS Support
@@ -239,8 +227,8 @@ layout: exam
     - D. Attending AWS classes at a local university
 
     <details markdown=1><summary markdown="span">Answer</summary>
-    Correct Answer: C
-</details>
+        Correct Answer: C
+    </details>
 
 1. Which of the Reserved Instance (RI) pricing models can change the attributes of the RI as long as the exchange results in the creation of RIs of equal or greater value?
     - A. Dedicated RIs
@@ -249,8 +237,8 @@ layout: exam
     - D. Standard RIs
 
     <details markdown=1><summary markdown="span">Answer</summary>
-    Correct Answer: C
-</details>
+        Correct Answer: C
+    </details>
 
 1. Which AWS feature will reduce the customer's total cost of ownership (TCO)?
     - A. Shared responsibility security model
@@ -259,6 +247,7 @@ layout: exam
     - D. Encryption
 
     <details markdown=1><summary markdown="span">Answer</summary>
+
     Correct Answer: C
 </details>
 
@@ -293,7 +282,7 @@ layout: exam
 
     <details markdown=1><summary markdown="span">Answer</summary>
 
-    Correct Answer: B
+    Correct Answer: B, D
 </details>
 
 1. Which is a recommended pattern for designing a highly available architecture on AWS?
@@ -327,7 +316,7 @@ layout: exam
 
     <details markdown=1><summary markdown="span">Answer</summary>
 
-    Correct Answer: D
+    Correct Answer: D, E
 </details>
 
 1. Which AWS services should be used for read/write of constantly changing data? (Select TWO.)
@@ -339,7 +328,7 @@ layout: exam
 
     <details markdown=1><summary markdown="span">Answer</summary>
 
-    Correct Answer: B
+    Correct Answer: B, E
 </details>
 
 1. What is one of the advantages of the Amazon Relational Database Service (Amazon RDS)?

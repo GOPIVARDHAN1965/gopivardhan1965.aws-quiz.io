@@ -11,9 +11,8 @@ layout: exam
     - D. Increased reliability in the underlying hardware of Amazon EC2 instances
 
     <details markdown=1><summary markdown="span">Answer</summary>
-
-    Correct Answer: A
-</details>
+      Correct Answer: A
+  </details>
 
 2. Which AWS services can be used to gather information about AWS account activity? (Select TWO.)
     - A. Amazon CloudFront

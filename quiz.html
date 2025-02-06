@@ -1,230 +1,3 @@
-<!-- <!DOCTYPE html>
-
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AWS Practice Quiz</title>
-    <style>
-      body {
-          font-family: Arial, sans-serif;
-          margin: 20px;
-          padding: 20px;
-          background-color: #f4f4f4;
-      }
-      .quiz-container {
-          background: white;
-          padding: 20px;
-          border-radius: 8px;
-          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-          max-width: 600px;
-          margin: 20px auto;
-          text-align: left;
-      }
-      .question {
-          font-weight: bold;
-      }
-      .options {
-          list-style: none;
-          padding: 0;
-      }
-      .options li {
-          background: #eaeaea;
-          padding: 10px;
-          margin: 5px 0;
-          cursor: pointer;
-          border-radius: 5px;
-          transition: 0.3s;
-      }
-      .options li:hover {
-          background: #d6d6d6;
-      }
-      .correct {
-          background-color: #90ee90 !important;
-      }
-      .wrong {
-          background-color: #ff726f !important;
-      }
-      .score, .wrong-count, .question-count {
-          font-size: 18px;
-          font-weight: bold;
-      }
-      .wrong-count {
-          color: red;
-      }
-      .hidden {
-          display: none;
-      }
-      .btn {
-          margin-top: 10px;
-          padding: 10px 15px;
-          background: #007bff;
-          color: white;
-          border: none;
-          cursor: pointer;
-          border-radius: 5px;
-          font-size: 16px;
-          transition: 0.3s;
-          margin-right: 10px;
-      }
-      .btn:hover {
-          background: #0056b3;
-      }
-      .btn:disabled {
-          background: #cccccc;
-          cursor: not-allowed;
-      }
-  </style>
-</head>
-<body>
-
-
-
-<div class="quiz-container">
-  <h2 id="aws-quiz">AWS Practice Quiz</h2>
-  <p class="question-count" id="questionCount"></p>
-  <div id="quiz"></div>
-  <button class="btn hidden" id="prevBtn" onclick="prevQuestion()">Previous Question</button>
-  <button class="btn" id="submitBtn" onclick="submitAnswer()">Submit Answer</button>
-  <button class="btn hidden" id="nextBtn" onclick="nextQuestion()">Next Question</button>
-  <p class="score" id="score">Score: 0</p>
-  <p class="wrong-count" id="wrongCount">Wrong Answers: 0</p>
-</div>
-
-<script>
-  let currentQuestion = 0;
-  let score = 0;
-  let wrongCount = 0;
-  let selectedAnswers = {}; // Stores selected answers per question
-  let answeredQuestions = new Set(); // Tracks submitted questions
-
-  // Load the quiz script dynamically
-  const quizNumber = Math.floor(Math.random() * 12) + 1;
-  const script = document.createElement('script');
-  script.src = `practice-exam-${quizNumber}.js`;
-
-  script.onload = function () {
-      if (typeof quizData === "undefined" || quizData.length === 0) {
-          alert("Quiz data failed to load. Please refresh and try again.");
-          return;
-      }
-      document.getElementById("aws-quiz").innerText = `AWS Practice Exam ${quizNumber}`;
-      loadQuestion(); // ✅ Load the first question properly
-  };
-
-  document.head.appendChild(script);
-
-  function loadQuestion() {
-      if (quizData.length === 0) return; // Ensure quizData is available
-
-      let quizDiv = document.getElementById("quiz");
-      let question = quizData[currentQuestion];
-
-      document.getElementById("questionCount").innerText = `Question: ${currentQuestion + 1} / ${quizData.length}`;
-      document.getElementById("submitBtn").disabled = false; // Enable submit initially
-
-      quizDiv.innerHTML = `
-          <p class="question">${question.question}</p>
-          <ul class="options">
-              ${question.options.map((option, index) => 
-                  `<li onclick="selectAnswer(${index}, this)" id="option${index}">${option}</li>`
-              ).join("")}
-          </ul>
-      `;
-
-      document.getElementById("prevBtn").classList.toggle("hidden", currentQuestion === 0);
-      document.getElementById("nextBtn").classList.toggle("hidden", !answeredQuestions.has(currentQuestion));
-
-      // ✅ Restore previous selections
-      if (selectedAnswers[currentQuestion]) {
-          selectedAnswers[currentQuestion].forEach(index => {
-              let option = document.getElementById(`option${index}`);
-              option.style.backgroundColor = "#b0c4de"; // Highlight previously selected option
-          });
-      }
-
-      // ✅ If already answered, show the result
-      if (answeredQuestions.has(currentQuestion)) {
-          showAnswers(false); // Prevent wrong count from increasing on revisiting
-          document.getElementById("submitBtn").disabled = true;
-      }
-  }
-
-  function selectAnswer(index, element) {
-      if (!selectedAnswers[currentQuestion]) {
-          selectedAnswers[currentQuestion] = [];
-      }
-
-      if (selectedAnswers[currentQuestion].includes(index)) {
-          selectedAnswers[currentQuestion] = selectedAnswers[currentQuestion].filter(ans => ans !== index);
-          element.style.backgroundColor = "#eaeaea";
-      } else {
-          selectedAnswers[currentQuestion].push(index);
-          element.style.backgroundColor = "#b0c4de";
-      }
-  }
-
-  function submitAnswer() {
-      if (answeredQuestions.has(currentQuestion)) return; // Prevent multiple submissions
-
-      showAnswers(true); // ✅ Only increase wrong count when first submitting
-
-      answeredQuestions.add(currentQuestion); // Mark question as answered
-      document.getElementById("submitBtn").disabled = true; // ✅ Disable submit button
-      document.getElementById("nextBtn").classList.remove("hidden");
-  }
-
-  function showAnswers(updateWrongCount) {
-      let correctAnswers = quizData[currentQuestion].answer;
-      if (!Array.isArray(correctAnswers)) {
-          correctAnswers = [correctAnswers];
-      }
-
-      let userAnswers = selectedAnswers[currentQuestion] || [];
-      
-      let isCorrect = userAnswers.length === correctAnswers.length &&
-                      userAnswers.every(ans => correctAnswers.includes(ans));
-
-      document.querySelectorAll(".options li").forEach((li, index) => {
-          li.onclick = null; // ✅ Disable further selections
-          if (correctAnswers.includes(index)) {
-              li.classList.add("correct");
-          } else if (userAnswers.includes(index)) {
-              li.classList.add("wrong");
-          }
-      });
-
-      if (isCorrect) {
-          score++;
-      } else if (updateWrongCount) { // ✅ Increase wrong count only when first submitting
-          wrongCount++;
-      }
-
-      document.getElementById("score").innerText = `Score: ${score}`;
-      document.getElementById("wrongCount").innerText = `Wrong Answers: ${wrongCount}`;
-  }
-
-  function nextQuestion() {
-      if (currentQuestion < quizData.length - 1) {
-          currentQuestion++;
-          loadQuestion();
-      } else {
-          alert(`Quiz completed!\nYour final score: ${score}/${quizData.length}\nWrong Answers: ${wrongCount}`);
-      }
-  }
-
-  function prevQuestion() {
-      if (currentQuestion > 0) {
-          currentQuestion--;
-          loadQuestion(); // ✅ Prevents wrong count from increasing
-      }
-  }
-</script>
-
-</body>
-</html> -->
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -300,9 +73,21 @@
             background: #cccccc;
             cursor: not-allowed;
         }
+        .home-btn {
+            display: block;
+            width: 120px;
+            margin-bottom: 15px;
+            background: #28a745; /* Green color for home button */
+        }
+        .home-btn:hover {
+            background: #218838;
+        }
     </style>
 </head>
 <body>
+
+<!-- Home Button -->
+<button class="btn home-btn" onclick="goHome()">🏠 Home</button>
 
 <!-- Quiz Section -->
 <div class="quiz-container">
@@ -368,7 +153,7 @@
             });
         }
 
-        // ✅ If already answered, show the result
+        // ✅ If already answered, show answers but DON'T increase score
         if (answeredQuestions.has(currentQuestion)) {
             showAnswers(false);
             document.getElementById("submitBtn").disabled = true;
@@ -398,7 +183,7 @@
         document.getElementById("nextBtn").classList.remove("hidden");
     }
 
-    function showAnswers(updateWrongCount) {
+    function showAnswers(updateScore) {
         let correctAnswers = quizData[currentQuestion].answer;
         if (!Array.isArray(correctAnswers)) {
             correctAnswers = [correctAnswers];
@@ -417,10 +202,12 @@
             }
         });
 
-        if (isCorrect) {
-            score++;
-        } else if (updateWrongCount) {
-            wrongCount++;
+        if (updateScore && !answeredQuestions.has(currentQuestion)) {
+            if (isCorrect) {
+                score++;
+            } else {
+                wrongCount++;
+            }
         }
 
         document.getElementById("score").innerText = `Score: ${score}`;
@@ -441,6 +228,10 @@
             currentQuestion--;
             loadQuestion();
         }
+    }
+
+    function goHome() {
+        window.location.href = "index.html"; // ✅ Redirects back to home page
     }
 </script>
 
